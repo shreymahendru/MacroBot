@@ -14,8 +14,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from staticserve import index
 
 urlpatterns = [
+    url(r'^$', index, name='index'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^macro_bot/', include('Macro_bot.urls'))
 ]
